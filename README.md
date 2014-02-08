@@ -61,3 +61,13 @@ http://hbase.apache.org/book/client.html so it is based on the usage of an HTabl
 - Using a write buffer and client-controlled flush. This is done using a pool of actors to handle the write operations
 
 
+## Testing
+
+The application also shows the usage of some other framework I found very useful in the past:
+
+- Subcut: To handle the Dependency Injection. The version used here is a customisation of the official one I did to
+support easier injection of values from the configuration files
+
+- WireMock: To test HTTP clients against a stubbed http server
+
+Note: Tests are sometimes a bit flacky because of some ports remaining hung. I'm still working on it.
