@@ -61,7 +61,7 @@ http://hbase.apache.org/book/client.html so it is based on the usage of an HTabl
 - Using a write buffer and client-controlled flush. This is done using a pool of actors to handle the write operations
 
 
-## Testing
+## What Else
 
 The application also shows the usage of some other framework I found very useful in the past:
 
