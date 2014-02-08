@@ -1,0 +1,6 @@
+.DS_Store
+alternateLocation/
+target/
+*.iml
+**/*.iml
+**/.idea
