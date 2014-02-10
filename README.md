@@ -1,18 +1,17 @@
 Reactive Rest Client
 ====================
 
-Sample of a rest client written using Spray AKKA and RxScala
+Sample of a rest client written using Spray AKKA and RxScala.
+The idea of the application is to give a concrete example of the usage of Spray (Spray Client and Spray-Json), AKKA and ScalaRx.
 
+It is based on a concrete use case I recently developed and the main idea is to evolve this project into a general reactive client to be used only implementing the data marshalling.
+  
 This project consists of two sub-projects:
 
 - API: A Client API to interface with a Rest Program Service, giving information (description, genre, source info) about TV programs
 - Client App: A client application using the API to browse the content of the Program Service and dumping its content on HBase
 in raw format and after doing some transformation for specific lookups
 
-The idea of the application is to give a concrete example of the usage of Spray (Spray Client and Spray-Json), AKKA and ScalaRx.
-
-It is based on a concrete use case I recently developed and the main idea is to evolve this project into a general reactive
-  client to be used only implementing the data marshalling.
 
 ## Technologies used:
 
