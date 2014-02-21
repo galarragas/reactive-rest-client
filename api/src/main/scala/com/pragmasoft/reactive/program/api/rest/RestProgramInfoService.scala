@@ -12,7 +12,6 @@ import spray.client.pipelining._
 import spray.util._
 import scala.concurrent.{Await, Future}
 import scala.util.Failure
-import spray.client.pipelining
 import spray.http._
 import spray.http.HttpHeaders.{Location => LocationHeader}
 import spray.httpx._
