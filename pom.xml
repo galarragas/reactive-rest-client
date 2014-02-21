@@ -12,6 +12,7 @@
   <modules>
     <module>api</module>
     <module>client-app</module>
+      <module>HttpRequestThrottling</module>
   </modules>
 
     <properties>

@@ -10,6 +10,8 @@ import com.pragmasoft.reactive.program.client.service.ProgramDBPersistence
 import com.pragmasoft.reactive.program.client.service.persistence.ProgramInfoHBasePersistenceSupport._
 import scala.Some
 import com.pragmasoft.reactive.program.api.data.ProgramInfo
+import org.apache.hadoop.hbase.HBaseConfiguration
+import org.apache.hadoop.hbase.client.HTablePool
 
 class ProgramDBHBasePersistence(implicit val bindingModule: BindingModule) extends ProgramDBPersistence with Injectable {
   val log = LoggerFactory.getLogger(classOf[ProgramDBHBasePersistence])

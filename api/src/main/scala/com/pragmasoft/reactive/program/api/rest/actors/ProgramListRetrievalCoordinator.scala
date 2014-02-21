@@ -24,7 +24,7 @@ object Ready
 object Done
 case class FailedBatch(batch: ProgramListPageRetrieve, error : Throwable)
 case class PublishId(programId: String)
-
+object ResetCounter
 
 object ProgramListRetrievalCoordinator {
   type PublisherFactory = (ActorContext, Observer[ProgramID]) => ActorRef
@@ -172,7 +172,7 @@ class ProgramListRetrievalCoordinator(startIndex: Int, endIndex: Int, earliestUp
   }
 }
 
-object ResetCounter
+
 
 
 

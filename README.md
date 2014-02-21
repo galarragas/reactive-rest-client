@@ -3,11 +3,12 @@ Reactive Rest Client
 
 Sample of a rest client written using Spray AKKA and RxScala
 
-This project consists of two sub-projects:
+This project consists of three sub-projects:
 
 - API: A Client API to interface with a Rest Program Service, giving information (description, genre, source info) about TV programs
 - Client App: A client application using the API to browse the content of the Program Service and dumping its content on HBase
 in raw format and after doing some transformation for specific lookups
+- HttpRequestThrottling: This is a generalisation of the request throttling logic implemented in the API project.
 
 The idea of the application is to give a concrete example of the usage of Spray (Spray Client and Spray-Json), AKKA and ScalaRx.
 
@@ -60,6 +61,11 @@ http://hbase.apache.org/book/client.html so it is based on the usage of an HTabl
 
 - Using a write buffer and client-controlled flush. This is done using a pool of actors to handle the write operations
 
+## HttpRequestThrottling
+
+This is a generalisation of the request throttling logic implemented in the API project.
+The idea is to create a generic mechanism to allow the throttling of all the messages sent and received by a `sendReceive` Spray pipeline.
+The work can be generalised for different protocols but at the moment is focused on HTTP only.
 
 ## Testing
 

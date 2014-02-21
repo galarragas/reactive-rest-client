@@ -8,6 +8,7 @@ import scala.concurrent.duration._
 import ExecutionContext.Implicits.global
 import scala.util.Try
 import com.pragmasoft.reactive.program.api.ProgramDBService
+import com.pragmasoft.reactive.program.api.config.ConfigConversions._
 
 object ProgramDBAcquirer {
   object MaxProgramExecutionTime extends BindingId
