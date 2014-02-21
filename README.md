@@ -3,6 +3,8 @@ Reactive Rest Client
 
 Sample of a rest client written using Spray AKKA and RxScala
 
+It is based on a concrete use case I recently developed and the main idea is to evolve this project into a general reactive client to be used only implementing the data marshalling.
+  
 This project consists of three sub-projects:
 
 - API: A Client API to interface with a Rest Program Service, giving information (description, genre, source info) about TV programs
@@ -67,7 +69,7 @@ This is a generalisation of the request throttling logic implemented in the API 
 The idea is to create a generic mechanism to allow the throttling of all the messages sent and received by a `sendReceive` Spray pipeline.
 The work can be generalised for different protocols but at the moment is focused on HTTP only.
 
-## Testing
+## What Else
 
 The application also shows the usage of some other framework I found very useful in the past:
 
