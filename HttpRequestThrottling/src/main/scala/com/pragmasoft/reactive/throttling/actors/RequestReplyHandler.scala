@@ -17,6 +17,8 @@ class RequestReplyHandler[Reply](coordinator: ActorRef)(implicit manifest: Manif
 
       implicit val callTimeout: Timeout = requestTimeout
 
+      log.debug("Forwarding request {} to transport", request)
+
       val responseFuture: Future[Reply] = transport ? request map {
         case x if (manifest.runtimeClass.isAssignableFrom(x.getClass)) ⇒
           x.asInstanceOf[Reply]
@@ -27,8 +29,10 @@ class RequestReplyHandler[Reply](coordinator: ActorRef)(implicit manifest: Manif
         client ! Await.result(responseFuture, requestTimeout)
       } catch {
         case timeout: TimeoutException =>
-          log.warning(s"Timeout exception while serving request $request. Exception: $timeout")
+          log.debug(s"Timeout exception while serving request $request. Exception: $timeout")
       }
+
+      log.debug("Ready")
 
       coordinator ! Ready
   }

@@ -62,7 +62,7 @@ abstract class RequestReplyThrottlingCoordinator[Request](
         handlersPool.get() ! requestsToServe.poll()
         leftRequestAllowanceForThisInterval -= 1
       } else {
-        log.warning(s"No handlers available to serve request having ${requestsToServe.count()} to be sent and $leftRequestAllowanceForThisInterval messages still allowed to be sent in this interval")
+        log.debug(s"No handlers available to serve request having ${requestsToServe.count()} to be sent and $leftRequestAllowanceForThisInterval messages still allowed to be sent in this interval")
       }
     } else {
       log.debug("Not sending message: leftRequestAllowanceForThisMinute: {}, #requestToServe: {}", leftRequestAllowanceForThisInterval, requestsToServe.count())
